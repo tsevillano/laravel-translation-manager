@@ -139,7 +139,6 @@ class Manager{
                     $this->exportFiles($locale,$group,$groups[$group]);
                 }
             }
-            Translation::where('group', $group)->whereNotNull('value')->update(array('status' => Translation::STATUS_SAVED));
         }
     }
     
@@ -153,7 +152,6 @@ class Manager{
                 }
 
             }
-            Translation::whereNotNull('value')->update(array('status' => Translation::STATUS_SAVED));
     }
 
     public function cleanTranslations()
